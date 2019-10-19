@@ -1,16 +1,19 @@
 from datetime import datetime
-import speech_recognition as sr
+import win32com.client 
 
 
+speaker = win32com.client.Dispatch("SAPI.SpVoice")
 i=0
 while (i==0):
     ch=str(input("What's your command: "))
     if ch=="hey friday":
-        print("What's up, Boss")
+        print("What's up Boss")
+        mytext="What's up Boss"
+        speaker.Speak(mytext)
     elif ch=="hey buddy":
-        print("Yes, Boss")
+        print("Yes Boss")
     elif ch=="hey bud":
-        print("Good to see you too, sir")
+        print("Good to see you too sir")
     elif ch=="fri":
         time = datetime.now().time()
         print("Current time is:",time)
@@ -29,4 +32,4 @@ while (i==0):
     elif ch=="can you stop":
         print("But I don't want to    ಥ_ಥ")
     elif ch=="glad to have you back buddy":
-        print("That's my Pleasure, Boss")
+        print("That's my Pleasure Boss")
