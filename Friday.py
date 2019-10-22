@@ -1,5 +1,7 @@
 from datetime import datetime
 import win32com.client 
+import speech_recognition as sr  
+
 
 
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
@@ -43,3 +45,11 @@ while (i==0):
         mytext="That's my Pleasure Boss"
     
     speaker.Speak(mytext)
+
+# get audio from the microphone 
+r = sr.Recognizer()                                                                                   
+with sr.Microphone() as source:
+    print("Speak:")
+    audio = r.listen(source)
+
+print("You said " + r.recognize_google(audio))
