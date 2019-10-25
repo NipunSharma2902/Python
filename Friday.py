@@ -50,11 +50,3 @@ while (i==0):
     
     converter.say(mytext)
     converter.runAndWait()
-
-# get audio from the microphone 
-#r = sr.Recognizer()                                                                                   
-#with sr.Microphone() as source:
-#    print("Speak:")
-#    audio = r.listen(source)
-
-#print("You said " + r.recognize_google(audio))
