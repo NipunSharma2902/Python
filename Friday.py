@@ -1,10 +1,14 @@
 from datetime import datetime
+import pyttsx3 
 import win32com.client 
 import speech_recognition as sr  
 
+#Use female voice
+converter = pyttsx3.init()
+voice_id="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0" 
+converter.setProperty('voice', voice_id) 
+converter.runAndWait()
 
-
-speaker = win32com.client.Dispatch("SAPI.SpVoice")
 i=0
 while (i==0):
     ch=str(input("What's your command: "))
@@ -44,12 +48,13 @@ while (i==0):
         print("That's my Pleasure Boss")
         mytext="That's my Pleasure Boss"
     
-    speaker.Speak(mytext)
+    converter.say(mytext)
+    converter.runAndWait()
 
 # get audio from the microphone 
-r = sr.Recognizer()                                                                                   
-with sr.Microphone() as source:
-    print("Speak:")
-    audio = r.listen(source)
+#r = sr.Recognizer()                                                                                   
+#with sr.Microphone() as source:
+#    print("Speak:")
+#    audio = r.listen(source)
 
-print("You said " + r.recognize_google(audio))
+#print("You said " + r.recognize_google(audio))
