@@ -2,6 +2,7 @@ from datetime import datetime
 import pyttsx3 
 import win32com.client 
 import speech_recognition as sr  
+import os
 
 #Use female voice
 converter = pyttsx3.init()
@@ -40,13 +41,17 @@ while (i==0):
     elif ch=="would you stop":
         i=1
         print("Aye aye Captain!!")
-        mytext="Aye aye Captain!!"
+        mytext="Aye,aye,Captain!!"
     elif ch=="can you stop":
         print("But I don't want to    ಥ_ಥ")
         mytext="But I don't want to"
     elif ch=="glad to have you back buddy":
         print("That's my Pleasure Boss")
         mytext="That's my Pleasure Boss"
+    elif ch=="open":
+        print("Apps that I can open are:")
+        mytext="Apps that I can open are"
+        print("")
     
     converter.say(mytext)
     converter.runAndWait()
