@@ -3,6 +3,7 @@ import pyttsx3
 import win32com.client 
 import speech_recognition as sr  
 import os
+import subprocess
 
 #Use female voice
 converter = pyttsx3.init()
@@ -51,7 +52,19 @@ while (i==0):
     elif ch=="open":
         print("Apps that I can open are:")
         mytext="Apps that I can open are"
-        print("")
+        print("Notepad")
+        print("Calculator")
+        print("Command Promt")
+
+        ex=str(input("Enter program name: "))
+        if ex=="notepad":
+            program="C:\WINDOWS\system32\notepad.exe"
+        elif ex=="calculator":
+            program="C:\WINDOWS\system32\calc.exe"
+        elif ex=="command prompt":
+            program="C:\WINDOWS\system32\cmd.exe"
+        
+        subprocess.call(program)
     
     converter.say(mytext)
     converter.runAndWait()
