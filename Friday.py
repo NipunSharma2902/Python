@@ -55,6 +55,7 @@ while (i==0):
         print("Notepad")
         print("Calculator")
         print("Command Promt")
+        print("Paint")
 
         ex=str(input("Enter program name: "))
         if ex=="notepad":
@@ -63,6 +64,8 @@ while (i==0):
             program="C:\WINDOWS\system32\calc.exe"
         elif ex=="command prompt":
             program="C:\WINDOWS\system32\cmd.exe"
+        elif ex=="paint":
+            program="C:\WINDOWS\system32\mspaint.exe"
         
         subprocess.call(program)
     
