@@ -26,11 +26,11 @@ while (i==0):
     elif ch=="fri":
         time = datetime.now().time()
         print("Current time is:",time)
-        mytext="Current time is:",time
+        mytext="Current time is:"
     elif ch=="day":
         today=datetime.today()
         print("Today's date is: ",today)
-        mytext="Today's date is: ",today
+        mytext="Today's date is: "
     elif ch=="stop":
         i=1
         print("Bye Sir")
