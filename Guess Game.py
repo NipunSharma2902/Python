@@ -1,6 +1,6 @@
 import random
 str=["Ironman","Captain America","HawkEye","Black Widow","Hulk","Thor"]
-x=random.randint(0,5)
+x=random.randint(0,10)
 word=str[x]
 length=len(str[x])
 i=0
